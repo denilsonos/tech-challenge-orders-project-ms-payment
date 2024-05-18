@@ -20,6 +20,7 @@ export const confirmOrderPaymentRoute = async (fastify: FastifyInstance) => {
           })
         })
         .catch((error: any) => {
+          console.error(error)
           if (error instanceof Exception) {
             return reply.status(error.statusCode).send(error.body)
           }

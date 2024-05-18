@@ -7,7 +7,6 @@ import {
   OneToOne,
   JoinColumn,
 } from 'typeorm'
-import { OrderDAO } from './order'
 import { PaymentEntity } from '../../core/entities/payment'
 
 @Entity('payment')
@@ -39,15 +38,13 @@ export class PaymentDAO {
   @Column({ type: 'int', name: 'orderId'})
   public orderId!: number
 
-  // @OneToOne(() => OrderDAO, (order: any) => order.payment)
-  // @JoinColumn({ name: "orderId" })
-  // public order!: OrderDAO
-
   public daoToEntity(): PaymentEntity {
     const paymentDTO = new PaymentEntity(
       this.qrCode,
       this.value,
       this.status,
+      undefined,
+      this.id
     )
     return paymentDTO
   }

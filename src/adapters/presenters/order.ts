@@ -10,7 +10,8 @@ export class OrderPresenter {
             orderEntity.createdAt,
             orderEntity.updatedAt, 
             ItemPresenter.EntitiesToDto(orderEntity.items!),
-            orderEntity.id);
+            orderEntity.id ?? 0,
+            orderEntity.total);
     }
 
     static EntitiesToDto(ordersEntities: OrderEntity[]): OrderDTO[] {

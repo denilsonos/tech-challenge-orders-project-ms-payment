@@ -10,6 +10,7 @@ import { confirmOrderPaymentRoute } from './routes/payments/confirm-order-paymen
 import { createOrderPaymentRoute } from './routes/payments/create-order-payment-route'
 import { getOrderPaymentRoute } from './routes/payments/get-order-payment-route'
 import { healthCheckRoute } from './routes/health-check/health-check-router'
+import { recuseOrderPaymentRoute } from './routes/payments/recuse-order-payment-route'
 
 export class FastifyAppAdapter implements AppAdapter {
   private readonly app: FastifyInstance
@@ -26,7 +27,7 @@ export class FastifyAppAdapter implements AppAdapter {
   public async init(): Promise<void> {
     this.app.register(multipart)
     this.app.register(cors, {
-      origin: [`http://localhost:3333`],
+      origin: [`*`],
     })
 
     this.app.register(fastifySwagger, swaggerOptions);
@@ -36,6 +37,7 @@ export class FastifyAppAdapter implements AppAdapter {
     this.app.register(createOrderPaymentRoute, { prefix: '/api/v1' }) // http://localhost:3000/api/v1/orders/payments
     this.app.register(getOrderPaymentRoute, { prefix: '/api/v1' }) // http://localhost:3000/api/v1/orders/payments/:id
     this.app.register(confirmOrderPaymentRoute, { prefix: '/api/v1' }) // http://localhost:3000/api/v1/orders/payments/confirm
+    this.app.register(recuseOrderPaymentRoute, { prefix: '/api/v1' }) // http://localhost:3000/api/v1/orders/payments/recuse
 
     // Health Check Route
     this.app.register(healthCheckRoute, { prefix: '/api/v1'}) // http://localhost:3000/api/v1/health-check

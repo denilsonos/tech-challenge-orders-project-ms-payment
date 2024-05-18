@@ -20,10 +20,12 @@ export class PaymentEntity {
     value: number,
     status: string,
     order?: OrderEntity,
+    id?: number
   ) {
     this.qrCode = qrCode
     this.value = value
     this.status = status
     this.order = order
+    this.id = id
   }
 }

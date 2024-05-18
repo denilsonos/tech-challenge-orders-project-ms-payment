@@ -13,8 +13,7 @@ export class PaymentRepositoryImpl implements PaymentRepository {
   async getById(paymentId: number): Promise<PaymentDAO | null> {
     const repository = this.database.getConnection().getRepository(PaymentDAO)
     return await repository.findOne({
-      where: { id: paymentId },
-      relations: ['order', 'order.items'],
+      where: { id: paymentId }
     })
   }
 

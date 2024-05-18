@@ -3,7 +3,7 @@ import { PaymentEntity } from "../../core/entities/payment";
 import { ItemDTO } from "./item";
 
 export class OrderDTO {
-  public id?: number
+  public id: number
 
   public status!: string
 
@@ -19,7 +19,7 @@ export class OrderDTO {
 
   public payment?: PaymentEntity
 
-  constructor(status: string, clientId: number | undefined, createdAt: Date, updatedAt: Date, items: ItemDTO[], id?: number, total?: number) { 
+  constructor(status: string, clientId: number | undefined, createdAt: Date, updatedAt: Date, items: ItemDTO[], id: number, total?: number) { 
     this.status = status
     this.clientId = clientId
     this.createdAt = createdAt

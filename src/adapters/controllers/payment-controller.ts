@@ -10,7 +10,6 @@ import { PaymentRepositoryImpl } from '../repositories/payment-repository'
 import { QueueServiceAdapter } from '../gateways/queue-service-adapter'
 import { FakeQueueServiceAdapter } from '../external-services/fake-queue-service/fake-queue-service-adapter'
 import { OrderRepository } from '../gateways/repositories/order-repository'
-import { OrderRepositoryImpl } from '../repositories/order-repository'
 import { PaymentServiceAdapter } from '../gateways/payment-service-adapter'
 import { FakePaymentServiceAdapter } from '../external-services/fake-payment-service/fake-payment-service-adapter'
 import { PaymentEntity } from '../../core/entities/payment'
@@ -21,6 +20,7 @@ import { PaymentsUseCase } from '../gateways/use-cases/payments-use-case'
 import { OrderUseCase } from '../gateways/use-cases/order-use-case'
 import { PaymentsCaseImpl } from '../../core/use-cases/payments/payments-use-case'
 import { OrderUseCaseImpl } from '../../core/use-cases/orders/order-use-case'
+import { RemoteOrderRepositoryImpl } from '../repositories/remote-order-repository'
 
 export class PaymentController implements Payment {
   private orderRepository: OrderRepository
@@ -31,7 +31,7 @@ export class PaymentController implements Payment {
   private orderUseCase: OrderUseCase
   
   constructor(readonly database: DbConnection) {    
-    this.orderRepository = new OrderRepositoryImpl(database)
+    this.orderRepository = new RemoteOrderRepositoryImpl()
     this.paymentRepository = new PaymentRepositoryImpl(database)
     this.queueService = new FakeQueueServiceAdapter(database)
     this.paymentService = new FakePaymentServiceAdapter()
@@ -50,6 +50,7 @@ export class PaymentController implements Payment {
 
     const { orderId } = result.data
     const order = await this.orderUseCase.getById(orderId)
+
     if (!order) {
       throw new BadRequestException(`Order identifier ${orderId} is invalid!`)
     }
@@ -85,6 +86,7 @@ export class PaymentController implements Payment {
     const orderDTO = OrderPresenter.EntityToDto(order)
   
     await this.paymentsUseCase.confirmOrderPayment(paymentDTO, orderDTO)
+    await this.orderUseCase.update(orderDTO.id, OrderStatus.Received)
   }
 
   async recuse(bodyParams: unknown): Promise<void> {
