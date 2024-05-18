@@ -4,7 +4,7 @@ import { OrmAdapter } from '../../adapters/gateways/orm-adapter'
 import { PaymentDAO } from '../../base/dao/payment'
 
 
-const { DB_HOST, DB_USER, DB_PASSWORD, DB_NAME, DB_PORT } = process.env
+const { DB_HOST, DB_USER, DB_PASSWORD, DB_NAME_PAYMENTS, DB_PORT } = process.env
 
 export class MysqlOrmAdapter implements OrmAdapter {
   private static instance: MysqlOrmAdapter | undefined // eslint-disable-line no-use-before-define
@@ -42,7 +42,7 @@ export class MysqlOrmAdapter implements OrmAdapter {
       port: Number(DB_PORT),
       username: DB_USER,
       password: DB_PASSWORD,
-      database: DB_NAME,
+      database: DB_NAME_PAYMENTS,
       synchronize: true,
       logging: false,
       entities: [
