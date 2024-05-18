@@ -2,11 +2,13 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
-  clearMocks: true,
+  collectCoverage: true,
+  coverageReporters: ["lcov"],
+  coverageDirectory: './coverage',
   "reporters": [
     "default",
     ["./node_modules/jest-html-reporter", {
-      "pageTitle": "MS Orders - Test Report",
+      "pageTitle": "MS Payment - Test Report",
     }]
   ]
 };
