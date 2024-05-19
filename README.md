@@ -35,14 +35,15 @@ Para rodar o projeto você precisa configurar o arquivo .env, utilizando como ba
 
 Exemplo:
 ```env
-    DB_HOST=db
-    DB_USER=root
-    DB_PASSWORD=password
-    DB_NAME=mydb
+    DB_HOST=127.0.0.1
+    DB_USER=vms
+    DB_PASSWORD=
+    DB_NAME_PAYMENTS=vmsdb
     DB_PORT=3306
-    APP_PORT=3000
+    APP_PORT=3001
     APP_HOST=0.0.0.0
     NODE_ENV=dev
+    ORDER_MS_HOST=http://127.0.0.1:3000
 ```
 
 
