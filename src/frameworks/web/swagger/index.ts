@@ -393,7 +393,7 @@ export const createOrderPaymentSwagger = () => ({
                     payment: {
                         type: 'object',
                         properties: {
-                            paymentId: { type: 'number' },
+                            id: { type: 'number' },
                             status: { type: 'string' },
                             value: { type: 'number' },
                             qrCode: { type: 'string' },
