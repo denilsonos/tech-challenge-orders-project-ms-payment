@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "1713e9c5-27d8-46c1-99e5-3a7b1584c8a5",
+		"name": "MS Payment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5717333"
+	},
+	"item": [
+		{
+			"name": "Create Payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					},
+					{
+						"key": "Content-Length",
+						"value": "1000",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJQ2VONDBIQWFpV2N3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TkRBMU1UWXhOalU0TVRKYUZ3MHpOREExTVRReE56QXpNVEphTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUURwblpRdkVHSHAxTmNFbGFRTm5DcC9jQXdwQS85WHB6Z0NKWFpFQXlPVG5OMGpHanp2VS9Oc0tmZzQKUHVMaUlxRXRoNUlna3F3ZXZjNHZlMW9XREF0QVlTQ2tvaGRpdDNJanFiZkVjMTFhUkZFci9USnNma21kaEdGYwp0WFAwSjVQSnhzeW80RnA3ZFQyQnZ1YnRqZjNpZEFveFFzbUlLbWxzZDRDeHJzbXoyU2czYnZ0U2wwVUx5UUdRCmthM29WSTBIMjFYZWVLV01sSDJuQ2h5VjZYc252L1ZINXZZQW9EWXJWRDNvNHNpOHVyWHluVjg1dkNhUW9TeDAKVU5tT0NPZXRaaDJUYm9VaDFpS2JOY2FGUXduK29ZRTVpQkxGdSswVmFaZEsrais0ejlxOUhyN09ycEpnbWc5VQpGTS9WUFkxQmdFOFV6SDI3UzFFQlQ2Wko0ZFZEQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJSWTAvL1Y2Q0FmTWlQUHliRFpPeFNRam9IdTBUQVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQStNK2llRjYrZwpUVTR2YTlzbmZpb3RCQ2MwKzFyK2plNmFvTzNlbTYxQ0pJaGp0TVlFM3dRT1BRZ1dyOEYyQnNUUVRlUkZjdWxiCklpdXkxSHdnbjNRSkg2TlNXQWVtNXNKWEl2bnpFSmZZdENnVklvdzZSK0FiZTdzY0YxV0NwK2xSS1dNbXNxR3cKUXBiS240ckljNE9OcUdveXZ6ejdGMGNVZWdHSjlvakZsTnQ5Z0Y5cnQ5MUVaMW5jN1dBTHpRSTQyNE5Mam1oVgpQOC9wRzBWOThUQkkyaEcrMkJReEpleUVCK3RjZFFXeE5PZndkMERGdjZ0YVUzT3BPN1JlMlBJLzZvUkxybzlWCjhNZzB2WjYrTTlmMTJmUEhRMk9ncGpsOSs2c0pQTVV3YkpOT1BRWXo2eWZnMUJUbzluckt5M3JVKzhnNzVmL0sKQmFHYklGMEJscFdUCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{url-aws}}/ms-payment/api/v1/orders/payments",
+					"protocol": "https",
+					"host": [
+						"{{url-aws}}"
+					],
+					"path": [
+						"ms-payment",
+						"api",
+						"v1",
+						"orders",
+						"payments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Confirm payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					},
+					{
+						"key": "Content-Length",
+						"value": "1000",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJQ2VONDBIQWFpV2N3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TkRBMU1UWXhOalU0TVRKYUZ3MHpOREExTVRReE56QXpNVEphTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUURwblpRdkVHSHAxTmNFbGFRTm5DcC9jQXdwQS85WHB6Z0NKWFpFQXlPVG5OMGpHanp2VS9Oc0tmZzQKUHVMaUlxRXRoNUlna3F3ZXZjNHZlMW9XREF0QVlTQ2tvaGRpdDNJanFiZkVjMTFhUkZFci9USnNma21kaEdGYwp0WFAwSjVQSnhzeW80RnA3ZFQyQnZ1YnRqZjNpZEFveFFzbUlLbWxzZDRDeHJzbXoyU2czYnZ0U2wwVUx5UUdRCmthM29WSTBIMjFYZWVLV01sSDJuQ2h5VjZYc252L1ZINXZZQW9EWXJWRDNvNHNpOHVyWHluVjg1dkNhUW9TeDAKVU5tT0NPZXRaaDJUYm9VaDFpS2JOY2FGUXduK29ZRTVpQkxGdSswVmFaZEsrais0ejlxOUhyN09ycEpnbWc5VQpGTS9WUFkxQmdFOFV6SDI3UzFFQlQ2Wko0ZFZEQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJSWTAvL1Y2Q0FmTWlQUHliRFpPeFNRam9IdTBUQVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQStNK2llRjYrZwpUVTR2YTlzbmZpb3RCQ2MwKzFyK2plNmFvTzNlbTYxQ0pJaGp0TVlFM3dRT1BRZ1dyOEYyQnNUUVRlUkZjdWxiCklpdXkxSHdnbjNRSkg2TlNXQWVtNXNKWEl2bnpFSmZZdENnVklvdzZSK0FiZTdzY0YxV0NwK2xSS1dNbXNxR3cKUXBiS240ckljNE9OcUdveXZ6ejdGMGNVZWdHSjlvakZsTnQ5Z0Y5cnQ5MUVaMW5jN1dBTHpRSTQyNE5Mam1oVgpQOC9wRzBWOThUQkkyaEcrMkJReEpleUVCK3RjZFFXeE5PZndkMERGdjZ0YVUzT3BPN1JlMlBJLzZvUkxybzlWCjhNZzB2WjYrTTlmMTJmUEhRMk9ncGpsOSs2c0pQTVV3YkpOT1BRWXo2eWZnMUJUbzluckt5M3JVKzhnNzVmL0sKQmFHYklGMEJscFdUCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{url-aws}}/ms-payment/api/v1/webhook/payments/confirm",
+					"protocol": "https",
+					"host": [
+						"{{url-aws}}"
+					],
+					"path": [
+						"ms-payment",
+						"api",
+						"v1",
+						"webhook",
+						"payments",
+						"confirm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recuse payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					},
+					{
+						"key": "Content-Length",
+						"value": "1000",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJQ2VONDBIQWFpV2N3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TkRBMU1UWXhOalU0TVRKYUZ3MHpOREExTVRReE56QXpNVEphTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUURwblpRdkVHSHAxTmNFbGFRTm5DcC9jQXdwQS85WHB6Z0NKWFpFQXlPVG5OMGpHanp2VS9Oc0tmZzQKUHVMaUlxRXRoNUlna3F3ZXZjNHZlMW9XREF0QVlTQ2tvaGRpdDNJanFiZkVjMTFhUkZFci9USnNma21kaEdGYwp0WFAwSjVQSnhzeW80RnA3ZFQyQnZ1YnRqZjNpZEFveFFzbUlLbWxzZDRDeHJzbXoyU2czYnZ0U2wwVUx5UUdRCmthM29WSTBIMjFYZWVLV01sSDJuQ2h5VjZYc252L1ZINXZZQW9EWXJWRDNvNHNpOHVyWHluVjg1dkNhUW9TeDAKVU5tT0NPZXRaaDJUYm9VaDFpS2JOY2FGUXduK29ZRTVpQkxGdSswVmFaZEsrais0ejlxOUhyN09ycEpnbWc5VQpGTS9WUFkxQmdFOFV6SDI3UzFFQlQ2Wko0ZFZEQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJSWTAvL1Y2Q0FmTWlQUHliRFpPeFNRam9IdTBUQVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQStNK2llRjYrZwpUVTR2YTlzbmZpb3RCQ2MwKzFyK2plNmFvTzNlbTYxQ0pJaGp0TVlFM3dRT1BRZ1dyOEYyQnNUUVRlUkZjdWxiCklpdXkxSHdnbjNRSkg2TlNXQWVtNXNKWEl2bnpFSmZZdENnVklvdzZSK0FiZTdzY0YxV0NwK2xSS1dNbXNxR3cKUXBiS240ckljNE9OcUdveXZ6ejdGMGNVZWdHSjlvakZsTnQ5Z0Y5cnQ5MUVaMW5jN1dBTHpRSTQyNE5Mam1oVgpQOC9wRzBWOThUQkkyaEcrMkJReEpleUVCK3RjZFFXeE5PZndkMERGdjZ0YVUzT3BPN1JlMlBJLzZvUkxybzlWCjhNZzB2WjYrTTlmMTJmUEhRMk9ncGpsOSs2c0pQTVV3YkpOT1BRWXo2eWZnMUJUbzluckt5M3JVKzhnNzVmL0sKQmFHYklGMEJscFdUCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"orderId\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{url-aws}}/ms-payment/api/v1/webhook/payments/recuse",
+					"protocol": "https",
+					"host": [
+						"{{url-aws}}"
+					],
+					"path": [
+						"ms-payment",
+						"api",
+						"v1",
+						"webhook",
+						"payments",
+						"recuse"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get payment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://n7v0gfft4a.execute-api.us-east-1.amazonaws.com/ms-payment/api/v1/orders/payments/{{id}}",
+					"protocol": "https",
+					"host": [
+						"n7v0gfft4a",
+						"execute-api",
+						"us-east-1",
+						"amazonaws",
+						"com"
+					],
+					"path": [
+						"ms-payment",
+						"api",
+						"v1",
+						"orders",
+						"payments",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
