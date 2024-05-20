@@ -74,10 +74,12 @@ Para a execução indicamos criar um item e um pedido afim de ter massas de test
 http://localhost:3000/docs
 ## Postman
 
-[Collection para teste](https://github.com/denilsonos/tech-challenge-orders-project/blob/main/Tech%20Challenge%20Collection.postman_collection.json)
+[Collection para teste](https://github.com/denilsonos/tech-challenge-orders-project-ms-payment/blob/main/MS%20Payment.postman_collection.json)
 
 ## Evidencia de cobertura de testes
 
-![ms-preparation](https://github.com/denilsonos/tech-challenge-orders-project-ms-preparation/assets/143292502/d80e4ca3-fc42-4b64-94e4-489ace32fd24)
+![ms-payment](https://github.com/denilsonos/tech-challenge-orders-project-ms-payment/assets/23120172/04272a8a-1017-4255-882b-aefd3356b049)
+
+
 
 
