@@ -13,7 +13,7 @@ export const getOrderPaymentRoute = async (fastify: FastifyInstance) => {
       const controller = new PaymentController(dbConn);
       
       await controller
-        .getOrder(request.params)
+        .getPayment(request.params)
         .then((payment) => {
           return reply.status(200).send({
             message: 'Payment found successfully!',

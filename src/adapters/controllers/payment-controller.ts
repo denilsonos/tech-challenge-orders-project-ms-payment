@@ -56,7 +56,7 @@ export class PaymentController implements Payment {
     }
     
     if (order.status !== OrderStatus.Created) {
-      throw new BadRequestException(`Order already has a pending payment!!`)
+      throw new BadRequestException(`Order already has a pending payment!`)
     }
 
     const payment = await this.paymentsUseCase.createOrderPayment(OrderPresenter.EntityToDto(order))
@@ -113,7 +113,7 @@ export class PaymentController implements Payment {
     await this.paymentsUseCase.recuseOrderPayment(paymentDTO, orderDTO)
   }
 
-  async getOrder(bodyParams: unknown): Promise<PaymentDTO> {
+  async getPayment(bodyParams: unknown): Promise<PaymentDTO> {
     const schema = z.object({
       id: z.number(),
     })
