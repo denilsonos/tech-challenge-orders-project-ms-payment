@@ -22,6 +22,7 @@ Node: 20.2.1
 ## Desenvolvimento
 
 O desenvolvimento se deu por meio de Pair programming, onde os atores e ouvintes definidos([documentação de base](https://docs.google.com/document/d/1T5h---6pFPUxed4JcuHohJVm-L-NUCaBk-LMAonPDmI/edit?usp=sharing)), implementaram e testaram os cenários encontrados no Tech challenge.
+
 ## Arquitetura
 
 ### Video explicativo
@@ -30,6 +31,11 @@ O desenvolvimento se deu por meio de Pair programming, onde os atores e ouvintes
 ### Desenho de Arquitetura
 
 ![arquitetura-fase5](https://github.com/user-attachments/assets/c8601b48-65a2-448c-b251-63536e7d5b2c)
+
+### Padrão SAGA
+O padrão SAGA escolhido foi <b>coreografado</b>, por conta da familiaridade da equipe com filas em seu cotidiano, além de permitir maior liberdade no tratamento dos dados.
+Por exemplo, possibilitando a reutilização das informações em determinado tópico, o que abstrai a complexidade da aplicação e nos permite evoluir o produto de forma mais fácil.
+Caso escolhêssemos SAGA orquestrada, adicionaremos complexidade ao projeto, que devido ao tamanho não possui necessidade.
 
 
 ## Deploy
