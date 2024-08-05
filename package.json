@@ -28,6 +28,7 @@
         "typescript": "^5.4.5"
     },
     "dependencies": {
+        "@aws-sdk/client-sqs": "^3.623.0",
         "@fastify/cors": "^8.2.1",
         "@fastify/multipart": "^7.6.0",
         "@fastify/swagger": "^8.12.0",

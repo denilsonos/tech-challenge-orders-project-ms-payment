@@ -25,6 +25,7 @@ export class PaymentsCaseImpl implements PaymentsUseCase {
     await this.paymentRepository.update(payment.id!, {
       status: PaymentStatus.Confirmed,
     })
+    await this.queueService.toqueue(order.id)
   }
 
   public async recuseOrderPayment(
