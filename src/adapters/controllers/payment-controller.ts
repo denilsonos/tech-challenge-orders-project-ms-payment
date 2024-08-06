@@ -21,6 +21,7 @@ import { OrderUseCase } from '../gateways/use-cases/order-use-case'
 import { PaymentsCaseImpl } from '../../core/use-cases/payments/payments-use-case'
 import { OrderUseCaseImpl } from '../../core/use-cases/orders/order-use-case'
 import { RemoteOrderRepositoryImpl } from '../repositories/remote-order-repository'
+import { AwsSqsAdapter } from '../external-services/aws/aws-sqs-adapter'
 
 export class PaymentController implements Payment {
   private orderRepository: OrderRepository
@@ -33,7 +34,7 @@ export class PaymentController implements Payment {
   constructor(readonly database: DbConnection) {    
     this.orderRepository = new RemoteOrderRepositoryImpl()
     this.paymentRepository = new PaymentRepositoryImpl(database)
-    this.queueService = new FakeQueueServiceAdapter(database)
+    this.queueService = new AwsSqsAdapter()
     this.paymentService = new FakePaymentServiceAdapter()
     this.orderUseCase = new OrderUseCaseImpl(this.orderRepository, this.queueService)
     this.paymentsUseCase = new PaymentsCaseImpl(this.paymentRepository, this.orderRepository, this.queueService, this.paymentService)
